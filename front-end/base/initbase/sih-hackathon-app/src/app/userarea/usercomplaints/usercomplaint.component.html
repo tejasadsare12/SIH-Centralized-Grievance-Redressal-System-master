@@ -1,0 +1,20 @@
+
+<h3>Existing Complaints</h3>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let res of status | async">
+      <td>{{res.id}}</td>
+      <td>{{res.district}}</td>
+      <td>{{res.description}}</td>
+      <td>{{res.status}}</td>
+    </tr>
+  </tbody>
+</table>

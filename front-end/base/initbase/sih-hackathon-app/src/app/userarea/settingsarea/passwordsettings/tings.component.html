@@ -1,0 +1,40 @@
+<form class="form-horizontal">
+  <fieldset>
+    <h3>Change Password</h3>
+
+    <form [formGroup]="form.getForm()" (ngSubmit)="save()">
+      <div class="form-group">
+        <label>Old Password</label>
+        <input [(ngModel)]="updPass.oldpass" type="password" class="form-control" formControlName="oldpass">
+        <div *ngIf="form.hasError('oldpass')" class="alert alert-danger">
+          <p>Error</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>New Password</label>
+        <input [(ngModel)]="updPass.newpass" type="password" class="form-control" formControlName="newpass">
+        <div *ngIf="form.hasError('newpass')" class="alert alert-danger">
+          <p>Error</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input (ngModel)="updPass.renewpass" type="password" class="form-control" formControlName="renewpass">
+        <div *ngIf="form.hasError('renewpass')" class="alert alert-danger">
+          <p>Passwords do not match!</p>
+        </div>
+      </div>
+
+
+  </form>
+
+
+    <div class="form-group">
+      <div class="col-lg-12">
+        <button type="reset" class="btn btn-primary" (click)="passSubmit()">Submit</button>
+
+      </div>
+    </div>
+  </fieldset>
+</form>
+<simple-notifications [options]="options"></simple-notifications>
